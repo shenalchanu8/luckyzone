@@ -1,0 +1,507 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #111111;
+  background: #fbfffd;
+  --site-header-height: 68px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --site-header-height: 74px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --site-header-height: 82px;
+  }
+}
+
+body {
+  margin: 0;
+  background: #fbfffd;
+  overflow: hidden;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.site-scroll-area {
+  scrollbar-color: #0f5b44 #f0fbf6;
+  scrollbar-width: thin;
+}
+
+.site-scroll-area::-webkit-scrollbar {
+  width: 11px;
+}
+
+.site-scroll-area::-webkit-scrollbar-track {
+  background: #f0fbf6;
+}
+
+.site-scroll-area::-webkit-scrollbar-thumb {
+  border: 2px solid #f0fbf6;
+  border-radius: 999px;
+  background: #0f5b44;
+}
+
+.site-scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #064e3b;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-shell {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.site-soft-green {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(181, 235, 211, 0.38), transparent 30%),
+    radial-gradient(circle at 92% 14%, rgba(217, 249, 229, 0.42), transparent 28%),
+    radial-gradient(circle at 18% 46%, rgba(230, 255, 244, 0.58), transparent 34%),
+    radial-gradient(circle at 84% 72%, rgba(187, 247, 208, 0.34), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f7fffb 38%, #ffffff 68%, #f4fff9 100%);
+}
+
+.site-soft-band {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(209, 250, 229, 0.48), transparent 34%),
+    radial-gradient(circle at 94% 16%, rgba(220, 252, 231, 0.42), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(247, 255, 251, 0.9));
+}
+
+.site-soft-card {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(220, 252, 231, 0.54), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86));
+}
+
+.mac-cinema {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.mac-cinema__image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top;
+}
+
+.mac-cinema span {
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  mix-blend-mode: screen;
+}
+
+.mac-cinema__ambient {
+  inset: 0;
+  background:
+    radial-gradient(circle at 57% 24%, rgba(74, 125, 255, 0.18), transparent 15%),
+    radial-gradient(circle at 82% 40%, rgba(86, 255, 221, 0.14), transparent 14%),
+    radial-gradient(circle at 67% 56%, rgba(255, 255, 255, 0.06), transparent 18%);
+  opacity: 0;
+  animation: macCinemaAmbient 8s ease-in-out infinite;
+}
+
+.mac-cinema__screen-glow {
+  border-radius: 2.8rem;
+  filter: blur(20px);
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.mac-cinema__screen-glow--blue {
+  left: 21.5%;
+  top: 4.5%;
+  width: 44%;
+  height: 46%;
+  background:
+    radial-gradient(circle at 48% 46%, rgba(74, 125, 255, 0.34), rgba(93, 138, 255, 0.14) 36%, transparent 72%);
+  transform: rotate(-16deg);
+  animation: macCinemaBlueGlow 7.5s ease-in-out infinite;
+}
+
+.mac-cinema__screen-glow--green {
+  left: 63.8%;
+  top: 22%;
+  width: 29%;
+  height: 31%;
+  background:
+    radial-gradient(circle at 52% 48%, rgba(64, 255, 220, 0.3), rgba(81, 214, 255, 0.12) 34%, transparent 72%);
+  transform: rotate(-13deg);
+  animation: macCinemaGreenGlow 7.5s ease-in-out infinite;
+}
+
+.mac-cinema__screen-sweep {
+  border-radius: 999px;
+  filter: blur(10px);
+  opacity: 0;
+}
+
+.mac-cinema__screen-sweep--blue {
+  left: 36%;
+  top: 8%;
+  width: 2.6%;
+  height: 37%;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.78), rgba(91, 146, 255, 0.26), transparent);
+  transform: rotate(28deg) translateY(-20%);
+  animation: macCinemaBlueSweep 6.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.mac-cinema__screen-sweep--green {
+  left: 75%;
+  top: 26%;
+  width: 2.1%;
+  height: 24%;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.82), rgba(102, 255, 228, 0.26), transparent);
+  transform: rotate(27deg) translateY(-18%);
+  animation: macCinemaGreenSweep 6.5s cubic-bezier(0.22, 1, 0.36, 1) infinite 0.9s;
+}
+
+.mac-cinema__screen-pulse {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  filter: blur(3px);
+  opacity: 0;
+}
+
+.mac-cinema__screen-pulse--blue {
+  left: 31.2%;
+  top: 16%;
+  width: 15%;
+  height: 18%;
+  animation: macCinemaPulse 6.5s ease-out infinite;
+}
+
+.mac-cinema__screen-pulse--green {
+  left: 73%;
+  top: 33%;
+  width: 11%;
+  height: 13%;
+  animation: macCinemaPulse 6.5s ease-out infinite 1.2s;
+}
+
+.ecosystem-cinema {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.ecosystem-cinema__image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.ecosystem-cinema span {
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  mix-blend-mode: screen;
+}
+
+.ecosystem-cinema__ambient {
+  inset: 0;
+  background:
+    radial-gradient(circle at 13% 34%, rgba(76, 152, 255, 0.5), transparent 16%),
+    radial-gradient(circle at 55% 64%, rgba(255, 137, 158, 0.22), transparent 24%),
+    radial-gradient(circle at 77% 31%, rgba(162, 125, 255, 0.22), transparent 18%),
+    radial-gradient(circle at 92% 75%, rgba(255, 120, 190, 0.25), transparent 18%);
+  opacity: 0;
+  animation: ecosystemAmbient 10s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.ecosystem-cinema__sweep,
+.ecosystem-cinema__final-sweep {
+  top: -20%;
+  bottom: -20%;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), rgba(111, 203, 255, 0.16), transparent);
+  filter: blur(18px);
+  opacity: 0;
+  transform: translateX(-160%) skewX(-16deg);
+}
+
+.ecosystem-cinema__sweep {
+  animation: ecosystemSweep 10s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.ecosystem-cinema__final-sweep {
+  animation: ecosystemFinalSweep 10s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.ecosystem-cinema__headphone-pulse {
+  left: 3.5%;
+  top: 13%;
+  width: 22%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(78, 166, 255, 0.55);
+  border-radius: 999px;
+  box-shadow: 0 0 35px rgba(67, 145, 255, 0.28), inset 0 0 35px rgba(126, 87, 255, 0.14);
+  opacity: 0;
+  animation: ecosystemHeadphonePulse 10s ease-in-out infinite;
+}
+
+.ecosystem-cinema__headphone-pulse--two {
+  animation-delay: 0.35s;
+}
+
+.ecosystem-cinema__earbud-wave {
+  left: 9.2%;
+  top: 61.5%;
+  width: 10%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(110, 212, 255, 0.55);
+  border-radius: 999px;
+  box-shadow: 0 0 24px rgba(92, 176, 255, 0.28);
+  opacity: 0;
+  animation: ecosystemEarbudWave 10s ease-out infinite;
+}
+
+.ecosystem-cinema__earbud-wave--right {
+  left: 14.2%;
+  top: 57.5%;
+  animation-delay: 0.18s;
+}
+
+.ecosystem-cinema__case-led {
+  left: 18.8%;
+  top: 78.2%;
+  width: 0.7%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: #42ff87;
+  box-shadow: 0 0 10px #42ff87, 0 0 24px rgba(66, 255, 135, 0.65);
+  opacity: 0;
+  animation: ecosystemCaseLed 10s ease-in-out infinite;
+}
+
+.ecosystem-cinema__tablet-glow {
+  left: 28%;
+  top: 45%;
+  width: 33%;
+  height: 28%;
+  border-radius: 45%;
+  background: radial-gradient(circle at 58% 54%, rgba(255, 255, 255, 0.34), rgba(255, 130, 160, 0.18) 26%, transparent 58%);
+  filter: blur(16px);
+  opacity: 0;
+  animation: ecosystemTabletGlow 10s ease-in-out infinite;
+}
+
+.ecosystem-cinema__stylus-glow {
+  left: 53%;
+  top: 59%;
+  width: 14%;
+  height: 1.7%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), rgba(255, 156, 186, 0.32), transparent);
+  filter: blur(7px);
+  opacity: 0;
+  transform: rotate(43deg);
+  animation: ecosystemStylusGlow 10s ease-in-out infinite;
+}
+
+.ecosystem-cinema__watch-glow {
+  top: 64%;
+  width: 7%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(97, 218, 255, 0.42), rgba(45, 255, 151, 0.14) 32%, transparent 68%);
+  filter: blur(8px);
+  opacity: 0;
+  animation: ecosystemWatchGlow 10s ease-in-out infinite;
+}
+
+.ecosystem-cinema__watch-glow--left {
+  left: 64%;
+}
+
+.ecosystem-cinema__watch-glow--right {
+  left: 72%;
+  animation-delay: 0.35s;
+}
+
+.ecosystem-cinema__phone-sweep {
+  top: 20%;
+  width: 4.5%;
+  height: 48%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.34), rgba(147, 207, 255, 0.16), transparent);
+  filter: blur(10px);
+  opacity: 0;
+  transform: translateY(-20%) rotate(7deg);
+  animation: ecosystemPhoneSweep 10s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.ecosystem-cinema__phone-sweep--blue {
+  left: 74%;
+}
+
+.ecosystem-cinema__phone-sweep--fold {
+  left: 86.5%;
+  height: 54%;
+  animation-delay: 0.18s;
+}
+
+.ecosystem-cinema__phone-sweep--flip {
+  left: 94.5%;
+  top: 54%;
+  height: 34%;
+  animation-delay: 0.32s;
+}
+
+@keyframes ecosystemAmbient {
+  0%, 100% { opacity: 0; }
+  8%, 15% { opacity: 0.8; }
+  35%, 84% { opacity: 0.42; }
+  91% { opacity: 0.75; }
+}
+
+@keyframes ecosystemSweep {
+  0%, 4% { opacity: 0; transform: translateX(-160%) skewX(-16deg); }
+  8% { opacity: 0.72; }
+  15% { opacity: 0; transform: translateX(760%) skewX(-16deg); }
+  16%, 100% { opacity: 0; transform: translateX(760%) skewX(-16deg); }
+}
+
+@keyframes ecosystemFinalSweep {
+  0%, 84% { opacity: 0; transform: translateX(-160%) skewX(-16deg); }
+  89% { opacity: 0.62; }
+  98% { opacity: 0; transform: translateX(760%) skewX(-16deg); }
+  100% { opacity: 0; transform: translateX(760%) skewX(-16deg); }
+}
+
+@keyframes ecosystemEarbudWave {
+  0%, 14%, 37%, 100% { opacity: 0; transform: scale(0.3); }
+  18% { opacity: 0.42; }
+  26% { opacity: 0.2; transform: scale(1.65); }
+  35% { opacity: 0; transform: scale(2.15); }
+}
+
+@keyframes ecosystemCaseLed {
+  0%, 15%, 37%, 100% { opacity: 0; transform: scale(0.8); }
+  20%, 29% { opacity: 1; transform: scale(1.15); }
+  33% { opacity: 0.35; transform: scale(1); }
+}
+
+@keyframes ecosystemHeadphonePulse {
+  0%, 29%, 54%, 100% { opacity: 0; transform: scale(0.82); }
+  34% { opacity: 0.36; }
+  45% { opacity: 0.15; transform: scale(1.18); }
+  51% { opacity: 0; transform: scale(1.38); }
+}
+
+@keyframes ecosystemWatchGlow {
+  0%, 48%, 72%, 100% { opacity: 0; transform: scale(0.95); }
+  55%, 64% { opacity: 0.62; transform: scale(1.05); }
+  68% { opacity: 0.2; transform: scale(1.18); }
+}
+
+@keyframes ecosystemTabletGlow {
+  0%, 58%, 88%, 100% { opacity: 0; transform: translate3d(-2%, 1%, 0) scale(0.98); }
+  67% { opacity: 0.5; }
+  82% { opacity: 0.26; transform: translate3d(5%, -2%, 0) scale(1.03); }
+}
+
+@keyframes ecosystemStylusGlow {
+  0%, 61%, 88%, 100% { opacity: 0; transform: translate3d(-5%, 6%, 0) rotate(43deg); }
+  70% { opacity: 0.78; }
+  84% { opacity: 0.2; transform: translate3d(12%, -8%, 0) rotate(43deg); }
+}
+
+@keyframes ecosystemPhoneSweep {
+  0%, 58%, 88%, 100% { opacity: 0; transform: translateY(-22%) rotate(7deg); }
+  68% { opacity: 0.45; }
+  82% { opacity: 0.12; transform: translateY(28%) rotate(7deg); }
+}
+
+@keyframes macCinemaAmbient {
+  0%, 100% { opacity: 0.24; }
+  35% { opacity: 0.5; }
+  70% { opacity: 0.3; }
+}
+
+@keyframes macCinemaBlueGlow {
+  0%, 100% { opacity: 0.14; transform: rotate(-16deg) scale(0.96); }
+  40% { opacity: 0.34; transform: rotate(-16deg) scale(1.02); }
+  72% { opacity: 0.2; transform: rotate(-16deg) scale(0.99); }
+}
+
+@keyframes macCinemaGreenGlow {
+  0%, 100% { opacity: 0.12; transform: rotate(-13deg) scale(0.96); }
+  38% { opacity: 0.28; transform: rotate(-13deg) scale(1.03); }
+  74% { opacity: 0.16; transform: rotate(-13deg) scale(0.99); }
+}
+
+@keyframes macCinemaBlueSweep {
+  0%, 10% { opacity: 0; transform: rotate(28deg) translateY(-22%); }
+  18% { opacity: 0.72; }
+  36% { opacity: 0.08; transform: rotate(28deg) translateY(40%); }
+  100% { opacity: 0; transform: rotate(28deg) translateY(40%); }
+}
+
+@keyframes macCinemaGreenSweep {
+  0%, 10% { opacity: 0; transform: rotate(27deg) translateY(-18%); }
+  20% { opacity: 0.76; }
+  38% { opacity: 0.1; transform: rotate(27deg) translateY(42%); }
+  100% { opacity: 0; transform: rotate(27deg) translateY(42%); }
+}
+
+@keyframes macCinemaPulse {
+  0%, 14%, 100% { opacity: 0; transform: scale(0.7); }
+  28% { opacity: 0.28; }
+  44% { opacity: 0.05; transform: scale(1.45); }
+}
+
+@media (max-width: 768px) {
+  .mac-cinema__screen-glow {
+    filter: blur(14px);
+  }
+
+  .mac-cinema__screen-sweep {
+    filter: blur(7px);
+  }
+
+  .ecosystem-cinema__headphone-pulse,
+  .ecosystem-cinema__earbud-wave,
+  .ecosystem-cinema__watch-glow,
+  .ecosystem-cinema__phone-sweep {
+    filter: blur(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

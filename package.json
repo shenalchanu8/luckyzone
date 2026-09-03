@@ -1,0 +1,17 @@
+{
+  "name": "luckyzone",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web",
+    "apps/admin"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:admin": "npm --workspace apps/admin run dev",
+    "dev:server": "dotnet run --project server/LuckyZone.Api.csproj",
+    "build:web": "npm --workspace apps/web run build",
+    "build:admin": "npm --workspace apps/admin run build",
+    "start:server": "dotnet run --project server/LuckyZone.Api.csproj"
+  }
+}

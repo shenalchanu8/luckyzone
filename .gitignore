@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Package manager caches
+.npm-cache/
+.yarn/cache/
+.pnpm-store/
+
+# Frontend build output
+dist/
+build/
+.vite/
+coverage/
+
+# .NET build output
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Local editor and machine files
+.vscode/
+.vs/
+**/.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+appsettings.*.local.json
+appsettings.Development.json
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+
+# Runtime uploads
+server/uploads/
