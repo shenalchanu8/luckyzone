@@ -2,7 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import { FaBatteryFull, FaClock, FaHeadphones, FaMobileScreenButton, FaShieldHalved } from "react-icons/fa6";
+import {
+  FaBatteryFull,
+  FaBrain,
+  FaClock,
+  FaDisplay,
+  FaHeadphones,
+  FaMicrochip,
+  FaMobileScreenButton,
+  FaPenNib,
+  FaShieldHalved,
+  FaWifi
+} from "react-icons/fa6";
 import RepairHero from "../components/RepairHero";
 
 const deferredImageProps = {
@@ -66,6 +77,15 @@ const featuredProducts = [
   { name: "LuckyBuds Air", price: "LKR 44,990", tag: "Best audio" },
   { name: "LuckyPad Slim", price: "LKR 189,990", tag: "Work and play" },
   { name: "LuckyWatch Active", price: "LKR 94,990", tag: "Fitness ready" }
+];
+
+const ipadHeroFeatures = [
+  { label: "Apple Intelligence", icon: FaBrain, accent: "text-orange-500" },
+  { label: "Apple Pencil Pro support", icon: FaPenNib, accent: "text-forest" },
+  { label: "M4 chip", icon: FaMicrochip, accent: "text-slate-950" },
+  { label: "Ultra Retina XDR display", icon: FaDisplay, accent: "text-orange-500" },
+  { label: "Wi-Fi 6E", icon: FaWifi, accent: "text-forest" },
+  { label: "All-day battery life", icon: FaBatteryFull, accent: "text-orange-500" }
 ];
 
 const deviceEssentials = [
@@ -853,13 +873,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-black text-white">
-        <img
-          src="/assets/section-ipad-showcase-card.png"
-          alt="Premium tablet power meets precision"
-          {...deferredImageProps}
-          className="block h-auto w-full"
-        />
+      <section className="site-soft-band w-full overflow-hidden py-10 text-slate-950 sm:py-14 lg:py-16 xl:py-20">
+        <div className="grid w-full items-center gap-8 px-4 sm:px-6 md:px-10 lg:grid-cols-[0.86fr_1.14fr] lg:gap-10 lg:px-12 xl:px-20 2xl:px-24">
+          <div className="w-full max-w-[720px]">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-forest/70 sm:text-sm sm:tracking-[0.35em]">
+              iPad Collection
+            </p>
+            <h2 className="mt-4 select-none text-6xl font-light leading-none tracking-[-0.04em] sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[6.8rem]">
+              <span className="bg-[linear-gradient(110deg,#0fa968_8%,#45c264_42%,#ff7a18_78%,#ff9f1c_100%)] bg-clip-text text-transparent">
+                iPad
+              </span>
+            </h2>
+            <p className="mt-5 max-w-[680px] text-4xl font-light leading-[1.1] tracking-[-0.04em] text-slate-950 sm:mt-6 sm:text-5xl lg:text-[3.15rem] xl:text-[3.35rem]">
+              Touch your ideas,
+              <span className="block">iPad brings them to life.</span>
+            </p>
+            <p className="mt-5 max-w-[650px] text-base leading-7 text-slate-600 sm:mt-6 sm:text-lg sm:leading-8 xl:text-xl">
+              Supercharged for creativity and performance. Built for work, study, and entertainment.
+            </p>
+
+            <div className="mt-8 grid w-full max-w-[860px] gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
+              {ipadHeroFeatures.map((feature) => {
+                const Icon = feature.icon;
+
+                return (
+                  <div
+                    key={feature.label}
+                    className="flex min-h-[84px] min-w-0 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-[0_16px_38px_rgba(15,23,42,0.08)] sm:min-h-[92px] sm:gap-4 sm:px-5"
+                  >
+                    <Icon className={`h-8 w-8 shrink-0 sm:h-9 sm:w-9 ${feature.accent}`} aria-hidden="true" />
+                    <span className="min-w-0 text-base font-semibold leading-snug text-slate-950 sm:text-lg">
+                      {feature.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.25rem] bg-[#eef6f0] shadow-[0_24px_80px_rgba(15,91,68,0.12)] sm:rounded-[1.5rem]">
+            <video
+              className="absolute inset-0 h-full w-full object-contain"
+              src="/assets/ipad-intro.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="iPad product introduction video"
+            />
+          </div>
+        </div>
       </section>
 
       <section className="site-soft-band py-20">
