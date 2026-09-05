@@ -14,6 +14,14 @@ import {
   FaShieldHalved,
   FaWifi
 } from "react-icons/fa6";
+import {
+  HiOutlineCreditCard,
+  HiOutlineDeviceMobile,
+  HiOutlineEmojiHappy,
+  HiOutlineRefresh,
+  HiOutlineShieldCheck,
+  HiOutlineTruck
+} from "react-icons/hi";
 import RepairHero from "../components/RepairHero";
 
 const deferredImageProps = {
@@ -87,6 +95,220 @@ const ipadHeroFeatures = [
   { label: "Wi-Fi 6E", icon: FaWifi, accent: "text-forest" },
   { label: "All-day battery life", icon: FaBatteryFull, accent: "text-orange-500" }
 ];
+
+const macIntroFeatures = [
+  { label: "Apple Intelligence", icon: FaBrain, accent: "text-orange-500" },
+  { label: "M4 family chip", icon: FaMicrochip, accent: "text-slate-950" },
+  { label: "Liquid Retina display", icon: FaDisplay, accent: "text-forest" },
+  { label: "All-day battery life", icon: FaBatteryFull, accent: "text-orange-500" },
+  { label: "Fast Wi-Fi", icon: FaWifi, accent: "text-forest" },
+  { label: "Built for work and study", icon: FaShieldHalved, accent: "text-slate-950" }
+];
+
+const iphoneSeriesCards = [
+  { name: "iPhone 17", link: "/categories/iphone", accent: "from-forest to-citrus", image: "/assets/iphone-series/iphone-series-17.png" },
+  { name: "iPhone 16", link: "/categories/iphone", accent: "from-orange-500 to-ember", image: "/assets/iphone-series/iphone-series-16.png" },
+  { name: "iPhone 15", link: "/categories/iphone", accent: "from-slate-900 to-forest", image: "/assets/iphone-series/iphone-series-15.png" },
+  { name: "iPhone 14", link: "/categories/iphone", accent: "from-citrus to-orange-500", image: "/assets/iphone-series/iphone-series-14.png" },
+  { name: "iPhone 13", link: "/categories/iphone", accent: "from-forest to-slate-900", image: "/assets/iphone-series/iphone-series-13.png" }
+];
+
+const brandShowcase = [
+  { name: "Green Lion", count: 264 },
+  { name: "Samsung", count: 237 },
+  { name: "Xiaomi", count: 226 },
+  { name: "Apple", count: 142 },
+  { name: "Anker", count: 138 },
+  { name: "Sony", count: 137 },
+  { name: "JBL", count: 135 },
+  { name: "Philips", count: 54 },
+  { name: "Google", count: 52 },
+  { name: "Spigen", count: 49 },
+  { name: "OnePlus", count: 49 },
+  { name: "DJI", count: 42 },
+  { name: "Logitech", count: 41 },
+  { name: "ESR", count: 37 },
+  { name: "Honor", count: 34 },
+  { name: "Marshall", count: 34 },
+  { name: "Levelo", count: 33 },
+  { name: "Nintendo", count: 32 },
+  { name: "Amazon", count: 32 },
+  { name: "Huawei", count: 30 },
+  { name: "Powerology", count: 28 },
+  { name: "Nothing", count: 25 },
+  { name: "Nokia", count: 25 },
+  { name: "Amazfit", count: 24 },
+  { name: "Insta360", count: 23 },
+  { name: "Haylou", count: 23 },
+  { name: "Bose", count: 21 },
+  { name: "Infinix", count: 16 },
+  { name: "Tp-Link", count: 15 },
+  { name: "Porodo", count: 15 },
+  { name: "WiWU", count: 14 },
+  { name: "Skullcandy", count: 14 },
+  { name: "POCO", count: 13 },
+  { name: "nubia", count: 13 },
+  { name: "SanDisk", count: 13 },
+  { name: "ZTE", count: 13 },
+  { name: "Blackview", count: 12 },
+  { name: "instax", count: 11 },
+  { name: "FUJIFILM", count: 11 },
+  { name: "SHOKZ", count: 11 },
+  { name: "WHOOP", count: 11 },
+  { name: "HMD", count: 11 },
+  { name: "Kieslect", count: 11 },
+  { name: "Belkin", count: 11 },
+  { name: "Harman Kardon", count: 11 },
+  { name: "REDMAGIC", count: 10 },
+  { name: "Tecno", count: 10 },
+  { name: "Hollyland", count: 9 },
+  { name: "Beats", count: 9 },
+  { name: "Soundpeats", count: 8 },
+  { name: "Microsoft", count: 7 },
+  { name: "Fitbit", count: 7 },
+  { name: "UAG", count: 6 },
+  { name: "Ray-Ban", count: 6 },
+  { name: "Monster", count: 6 },
+  { name: "TCL", count: 6 },
+  { name: "CMF", count: 6 },
+  { name: "GoPro", count: 6 },
+  { name: "Mibro", count: 6 },
+  { name: "OPPO", count: 6 },
+  { name: "Meta", count: 5 },
+  { name: "KOSPET", count: 5 },
+  { name: "ZHIYUN", count: 5 },
+  { name: "Realme", count: 5 },
+  { name: "Motorola", count: 4 },
+  { name: "Viva Madrid", count: 4 },
+  { name: "KODAK", count: 3 },
+  { name: "UMIDIGI", count: 3 },
+  { name: "Blupebble", count: 2 },
+  { name: "hohem", count: 2 },
+  { name: "Transcend", count: 2 },
+  { name: "GQ Vouchers", count: 2 },
+  { name: "ITFIT", count: 2 },
+  { name: "Promate", count: 2 },
+  { name: "Greentel", count: 2 },
+  { name: "Meimi", count: 2 },
+  { name: "GARMIN", count: 1 },
+  { name: "Steam", count: 1 },
+  { name: "sudio", count: 1 },
+  { name: "Canon", count: 1 },
+  { name: "Baseus", count: 1 },
+  { name: "JOKADE", count: 1 },
+  { name: "elago", count: 1 },
+  { name: "itel", count: 1 },
+  { name: "HORI", count: 1 },
+  { name: "Lenovo", count: 1 },
+  { name: "CAT", count: 1 },
+  { name: "ROG", count: 1 },
+  { name: "ASUS", count: 1 }
+];
+
+const croppedBrandLogos = {
+  "Green Lion": "green-lion",
+  Samsung: "samsung",
+  Xiaomi: "xiaomi",
+  Apple: "apple",
+  Anker: "anker",
+  Sony: "sony",
+  JBL: "jbl",
+  Philips: "philips",
+  Google: "google",
+  Spigen: "spigen",
+  OnePlus: "oneplus",
+  DJI: "dji",
+  Logitech: "logitech",
+  ESR: "esr",
+  Honor: "honor",
+  Marshall: "marshall",
+  Levelo: "levelo",
+  Nintendo: "nintendo",
+  Amazon: "amazon",
+  Huawei: "huawei",
+  Powerology: "powerology",
+  Nothing: "nothing",
+  Nokia: "nokia",
+  Amazfit: "amazfit",
+  Insta360: "insta360",
+  Haylou: "haylou",
+  Bose: "bose",
+  Infinix: "infinix",
+  "Tp-Link": "tp-link",
+  Porodo: "porodo",
+  WiWU: "wiwu",
+  Skullcandy: "skullcandy",
+  POCO: "poco",
+  nubia: "nubia",
+  SanDisk: "sandisk",
+  ZTE: "zte",
+  Blackview: "blackview",
+  instax: "instax",
+  FUJIFILM: "fujifilm",
+  SHOKZ: "shokz",
+  WHOOP: "whoop",
+  HMD: "hmd",
+  Kieslect: "kieslect",
+  Belkin: "belkin",
+  "Harman Kardon": "harman-kardon",
+  REDMAGIC: "redmagic",
+  Tecno: "tecno",
+  Hollyland: "hollyland",
+  Beats: "beats",
+  Soundpeats: "soundpeats",
+  Microsoft: "microsoft",
+  Fitbit: "fitbit",
+  UAG: "uag",
+  "Ray-Ban": "ray-ban",
+  Monster: "monster",
+  TCL: "tcl",
+  CMF: "cmf",
+  GoPro: "gopro",
+  Mibro: "mibro"
+};
+
+const getBrandLogoUrl = (brandName) => {
+  const logo = croppedBrandLogos[brandName];
+  return logo ? `/assets/brands/${logo}.png` : "";
+};
+
+const localLogoBrands = brandShowcase.filter((brand) => croppedBrandLogos[brand.name]);
+const brandMarqueeItems = [...localLogoBrands, ...localLogoBrands];
+
+const footerPromoCards = [
+  { title: "Premium shopping experience", highlight: "Premium", icon: HiOutlineDeviceMobile, accent: "text-blue-500" },
+  { title: "Island wide secure delivery", highlight: "Island wide", icon: HiOutlineTruck, accent: "text-lime-500" },
+  { title: "Support to setup and transfer", highlight: "setup", icon: HiOutlineEmojiHappy, accent: "text-purple-500" },
+  { title: "Exchange your current Apple device", highlight: "Exchange", icon: HiOutlineRefresh, accent: "text-blue-500" },
+  { title: "Installment plans for card holders", highlight: "Installment", icon: HiOutlineCreditCard, accent: "text-lime-500" },
+  { title: "Expert care after purchase", highlight: "Expert", icon: HiOutlineShieldCheck, accent: "text-orange-500" }
+];
+
+const footerImageCards = [
+  "/assets/customer-showcase/customer-showcase-01.jpeg",
+  "/assets/customer-showcase/customer-showcase-02.jpeg",
+  "/assets/customer-showcase/customer-showcase-03.jpeg",
+  "/assets/customer-showcase/customer-showcase-04.jpeg",
+  "/assets/customer-showcase/customer-showcase-05.jpeg",
+  "/assets/customer-showcase/customer-showcase-06.jpeg",
+  "/assets/customer-showcase/customer-showcase-07.jpeg",
+  "/assets/customer-showcase/customer-showcase-08.jpeg",
+  "/assets/customer-showcase/customer-showcase-09.jpeg",
+  "/assets/customer-showcase/customer-showcase-10.jpeg",
+  "/assets/customer-showcase/customer-showcase-11.jpeg",
+  "/assets/customer-showcase/customer-showcase-12.jpeg",
+  "/assets/customer-showcase/customer-showcase-13.jpeg",
+  "/assets/customer-showcase/customer-showcase-14.jpeg",
+  "/assets/customer-showcase/customer-showcase-15.jpeg",
+  "/assets/customer-showcase/customer-showcase-16.jpeg",
+  "/assets/customer-showcase/customer-showcase-17.jpeg",
+  "/assets/customer-showcase/customer-showcase-18.jpeg",
+  "/assets/customer-showcase/customer-showcase-19.jpeg",
+  "/assets/customer-showcase/customer-showcase-20.jpeg"
+];
+
+const footerPromoMarqueeItems = [...footerPromoCards, ...footerPromoCards];
+const footerImageMarqueeItems = [...footerImageCards, ...footerImageCards];
 
 const deviceEssentials = [
   {
@@ -708,6 +930,54 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="site-soft-band py-10 text-slate-950 sm:py-12 lg:py-14" aria-labelledby="brand-showcase-title">
+        <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14">
+          <p className="select-none text-[11px] font-bold uppercase tracking-[0.32em] text-forest/70 sm:text-xs sm:tracking-[0.35em] lg:text-sm">
+            Brand Collection
+          </p>
+          <h2 id="brand-showcase-title" className="select-none mt-2.5 text-[clamp(2.2rem,4.3vw,3.7rem)] font-light leading-[1.05] tracking-[-0.05em] text-slate-950 sm:mt-3">
+            Our Brands
+          </h2>
+        </div>
+
+        <div className="relative mt-7 overflow-hidden sm:mt-9">
+          <div className="brand-marquee">
+            <div className="brand-marquee__track">
+              {brandMarqueeItems.map((brand, index) => {
+                const logoUrl = getBrandLogoUrl(brand.name);
+
+                return (
+                  <div
+                    key={`${brand.name}-${index}`}
+                    className="brand-marquee__item"
+                    aria-hidden={index >= localLogoBrands.length ? "true" : undefined}
+                  >
+                    <div className="brand-marquee__logo">
+                      {logoUrl ? (
+                        <img
+                          src={logoUrl}
+                          alt={`${brand.name} logo`}
+                          loading="lazy"
+                          decoding="async"
+                          className="brand-marquee__logo-image"
+                          onError={(event) => {
+                            event.currentTarget.closest(".brand-marquee__logo")?.classList.add("brand-marquee__logo--failed");
+                          }}
+                        />
+                      ) : null}
+                      <span className="brand-marquee__logo-fallback">{brand.name}</span>
+                    </div>
+                    <p className="mt-3 text-center text-sm font-semibold text-slate-900 sm:text-base">
+                      {brand.name}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         ref={upgradeSectionRef}
         className="relative isolate overflow-hidden bg-black pb-0 pt-5 text-white sm:pt-6 md:pt-7 lg:pt-8 2xl:pt-9"
@@ -831,8 +1101,116 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section ref={macCollectionRef} className="site-soft-band py-20">
-        <div className="px-6 md:px-10 lg:px-16 xl:px-24">
+      <section className="site-soft-band overflow-hidden py-14 text-slate-950 sm:py-16 lg:py-20" aria-labelledby="iphone-latest-title">
+        <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14">
+          <div className="overflow-hidden rounded-[1.75rem] border border-emerald-100 bg-black shadow-[0_24px_70px_rgba(15,91,68,0.12)] sm:rounded-[2rem]">
+            <video
+              className="block h-[240px] w-full object-cover sm:h-[340px] md:h-[430px] lg:h-[520px] xl:h-[600px]"
+              src="/assets/iphone-latest-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
+          </div>
+
+          <div className="mt-9 lg:mt-11">
+            <div>
+              <p className="select-none text-[11px] font-bold uppercase tracking-[0.32em] text-forest/70 sm:text-xs sm:tracking-[0.35em] lg:text-sm">
+                iPhone Collection
+              </p>
+              <h2 id="iphone-latest-title" className="select-none mt-2.5 bg-gradient-to-r from-forest via-citrus to-ember bg-clip-text text-[clamp(2.4rem,5vw,4.7rem)] font-light leading-[1.02] tracking-[-0.055em] text-transparent sm:mt-3">
+                iPhone Latest
+              </h2>
+            </div>
+          </div>
+
+          <div className="mt-7 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-5">
+            {iphoneSeriesCards.map((series) => (
+              <Link
+                key={series.name}
+                to={series.link}
+                className="group relative overflow-hidden rounded-[1.35rem] border border-emerald-100 bg-white/58 p-4 shadow-[0_16px_44px_rgba(15,91,68,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:bg-white/70 hover:shadow-[0_24px_60px_rgba(15,91,68,0.13)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2"
+              >
+                <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${series.accent}`} />
+                <div className="relative z-10 flex min-h-[245px] flex-col justify-between sm:min-h-[270px] lg:min-h-[255px] xl:min-h-[285px]">
+                  <div className="flex h-[155px] items-center justify-center bg-transparent sm:h-[180px] lg:h-[165px] xl:h-[190px]">
+                    <img
+                      src={series.image}
+                      alt={series.name}
+                      {...deferredImageProps}
+                      className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.04]"
+                    />
+                  </div>
+                  <div className="pt-5">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-forest/55">
+                      Apple
+                    </p>
+                    <h3 className="mt-2 text-[clamp(1.55rem,2vw,2.15rem)] font-light leading-none tracking-[-0.045em] text-slate-950">
+                      {series.name}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="site-soft-band w-full overflow-hidden py-10 text-slate-950 sm:py-14 lg:py-16 xl:py-20">
+        <div className="grid w-full items-center gap-8 px-4 sm:px-6 md:px-10 lg:grid-cols-[0.86fr_1.14fr] lg:gap-10 lg:px-12 xl:px-20 2xl:px-24">
+          <div className="w-full max-w-[720px]">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-forest/70 sm:text-sm sm:tracking-[0.35em]">
+              Mac Collection
+            </p>
+            <h2 className="mt-4 select-none bg-[linear-gradient(110deg,#0fa968_8%,#45c264_42%,#ff7a18_78%,#ff9f1c_100%)] bg-clip-text text-6xl font-light leading-none tracking-[-0.04em] text-transparent sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[6.8rem]">
+              Mac
+            </h2>
+            <p className="mt-5 max-w-[680px] text-4xl font-light leading-[1.1] tracking-[-0.04em] text-slate-950 sm:mt-6 sm:text-5xl lg:text-[3.15rem] xl:text-[3.35rem]">
+              Power your ideas,
+              <span className="block">Mac brings them to life.</span>
+            </p>
+            <p className="mt-5 max-w-[650px] text-base leading-7 text-slate-600 sm:mt-6 sm:text-lg sm:leading-8 xl:text-xl">
+              Built for creative work, everyday productivity, and smooth performance across study, business, and entertainment.
+            </p>
+
+            <div className="mt-8 grid w-full max-w-[860px] gap-3 sm:grid-cols-2 sm:gap-4 2xl:grid-cols-3">
+              {macIntroFeatures.map((feature) => {
+                const Icon = feature.icon;
+
+                return (
+                  <div
+                    key={feature.label}
+                    className="flex min-h-[84px] min-w-0 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-[0_16px_38px_rgba(15,23,42,0.08)] sm:min-h-[92px] sm:gap-4 sm:px-5"
+                  >
+                    <Icon className={`h-8 w-8 shrink-0 sm:h-9 sm:w-9 ${feature.accent}`} aria-hidden="true" />
+                    <span className="min-w-0 text-base font-semibold leading-snug text-slate-950 sm:text-lg">
+                      {feature.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.25rem] bg-[#eef6f0] shadow-[0_24px_80px_rgba(15,91,68,0.12)] sm:rounded-[1.5rem]">
+            <video
+              className="absolute inset-0 h-full w-full object-contain"
+              src="/assets/apple-mac-intro.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Mac product introduction video"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section ref={macCollectionRef} className="overflow-hidden bg-[#effcf6] py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14">
           <div className="max-w-4xl">
             <p className="select-none text-sm font-bold uppercase tracking-[0.35em] text-forest/70">
               Mac Collection
@@ -843,15 +1221,14 @@ export default function HomePage() {
           </div>
 
           <div
-            className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5"
-            style={{ contentVisibility: "auto", containIntrinsicSize: "320px 1600px" }}
+            className="mt-10 grid gap-6 sm:gap-7 md:grid-cols-2 xl:grid-cols-5"
           >
               {macShowcaseCards.map((card) => (
                 <Link
                   key={card.name}
                   to={card.link}
                   data-mac-card
-                  className="group overflow-hidden rounded-[1.8rem] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)] transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)]"
+                  className="group overflow-hidden rounded-[1.8rem] border border-emerald-100 bg-white shadow-[0_18px_45px_rgba(15,91,68,0.08)] transition duration-500 hover:-translate-y-2 hover:border-emerald-200 hover:shadow-[0_24px_60px_rgba(15,91,68,0.13)]"
                 >
                   <div className="relative flex h-[230px] items-center justify-center overflow-hidden bg-white px-5 py-6">
                     <img
@@ -1035,6 +1412,18 @@ export default function HomePage() {
 
       <RepairHero />
 
+      <section className="w-full overflow-hidden bg-black" aria-label="Smart watch video showcase">
+        <video
+          className="block h-[220px] w-full object-cover sm:h-[300px] md:h-[360px] lg:h-[430px] xl:h-[500px]"
+          src="/assets/watchilms5S.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      </section>
+
       <section className="site-soft-band py-16 sm:py-20" aria-labelledby="device-essentials-title">
         <div className="px-6 md:px-10 lg:px-16 xl:px-24">
           <div className="max-w-4xl">
@@ -1175,6 +1564,45 @@ export default function HomePage() {
           {...deferredImageProps}
           className="hidden h-auto w-full lg:block"
         />
+      </section>
+
+      <section className="site-soft-band overflow-hidden py-10 sm:py-12 lg:py-14" aria-label="LuckyZone benefits and customer moments">
+        <div className="footer-showcase-marquee footer-showcase-marquee--cards">
+          <div className="footer-showcase-marquee__track">
+            {footerPromoMarqueeItems.map((card, index) => {
+              const Icon = card.icon;
+              const parts = card.title.split(card.highlight);
+
+              return (
+                <div key={`${card.title}-${index}`} className="footer-promo-card">
+                  <Icon className={`h-7 w-7 ${card.accent}`} aria-hidden="true" />
+                  <p>
+                    {parts[0]}
+                    <span className={card.accent}>{card.highlight}</span>
+                    {parts[1]}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="footer-showcase-marquee footer-showcase-marquee--images mt-9">
+          <div className="footer-showcase-marquee__track footer-showcase-marquee__track--reverse">
+            {footerImageMarqueeItems.map((image, index) => (
+              <div key={`${image}-${index}`} className="footer-image-card">
+                <img
+                  src={image}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                  draggable="false"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
     </main>

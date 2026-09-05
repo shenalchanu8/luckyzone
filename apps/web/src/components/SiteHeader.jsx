@@ -112,10 +112,10 @@ export default function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-[0_1px_10px_rgba(15,23,42,0.03)] backdrop-blur-xl">
-      <div className="mx-auto flex min-h-[68px] w-full items-center justify-between gap-4 px-4 sm:min-h-[74px] sm:px-6 md:px-8 xl:min-h-[82px] xl:px-10 2xl:px-20">
-        <Link to="/" className="flex shrink-0 items-center" aria-label="LuckyZone home">
-          <img src="/assets/logo-transparent.png" alt="LuckyZone" className="h-10 w-auto object-contain sm:h-12 xl:h-14" />
+    <header className="sticky top-0 z-50 bg-white px-3 py-3 xl:border-b xl:border-slate-200 xl:bg-white/95 xl:px-0 xl:py-0 xl:shadow-[0_1px_10px_rgba(15,23,42,0.03)] xl:backdrop-blur-xl">
+      <div className="mx-auto flex min-h-[60px] w-full items-center justify-between gap-3 rounded-full border border-emerald-100 bg-white px-3 sm:min-h-[66px] sm:px-4 md:px-5 xl:min-h-[82px] xl:rounded-none xl:border-0 xl:bg-transparent xl:px-10 2xl:px-20">
+        <Link to="/" className="flex h-12 shrink-0 items-center rounded-full bg-white px-4 xl:h-auto xl:bg-transparent xl:px-0" aria-label="LuckyZone home">
+          <img src="/assets/logo-transparent.png" alt="LuckyZone" className="h-7 w-auto object-contain sm:h-8 xl:h-14" />
         </Link>
 
         <nav className="hidden min-w-0 items-center justify-center gap-4 xl:flex 2xl:gap-8" aria-label="Main navigation">
@@ -165,16 +165,16 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-1 sm:gap-2 xl:gap-4 2xl:gap-5">
-          <button type="button" aria-label="Search" className="flex h-10 w-10 items-center justify-center rounded-full text-slate-800 transition hover:bg-slate-100 hover:text-forest"><SearchIcon /></button>
-          <button type="button" aria-label="Account" className="hidden h-10 w-10 items-center justify-center rounded-full text-slate-800 transition hover:bg-slate-100 hover:text-forest sm:flex"><AccountIcon /></button>
-          <button type="button" aria-label="Cart" className="hidden h-10 w-10 items-center justify-center rounded-full text-slate-800 transition hover:bg-slate-100 hover:text-forest md:flex"><CartIcon /></button>
+          <button type="button" aria-label="Search" className="flex h-11 w-11 items-center justify-center rounded-full text-slate-700 transition hover:bg-slate-100 hover:text-forest xl:h-10 xl:w-10 xl:text-slate-800 xl:hover:bg-slate-100 xl:hover:text-forest"><SearchIcon /></button>
+          <button type="button" aria-label="Account" className="hidden h-11 w-11 items-center justify-center rounded-full text-slate-700 transition hover:bg-slate-100 hover:text-forest sm:flex xl:h-10 xl:w-10 xl:text-slate-800 xl:hover:bg-slate-100 xl:hover:text-forest"><AccountIcon /></button>
+          <button type="button" aria-label="Cart" className="hidden h-11 w-11 items-center justify-center rounded-full text-slate-700 transition hover:bg-slate-100 hover:text-forest md:flex xl:h-10 xl:w-10 xl:text-slate-800 xl:hover:bg-slate-100 xl:hover:text-forest"><CartIcon /></button>
           <button
             type="button"
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMenuOpen}
             aria-controls="responsive-navigation"
             onClick={() => setIsMenuOpen((current) => !current)}
-            className="ml-1 flex h-10 w-10 items-center justify-center rounded-full text-slate-800 transition hover:bg-slate-100 xl:hidden"
+            className="ml-1 flex h-11 w-11 items-center justify-center rounded-full text-slate-700 transition hover:bg-slate-100 hover:text-forest xl:hidden"
           >
             <span className="relative block h-5 w-5">
               <span className={`absolute left-0 top-[3px] h-0.5 w-5 rounded bg-current transition duration-200 ${isMenuOpen ? "translate-y-[6px] rotate-45" : ""}`} />
@@ -185,12 +185,12 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <div className={`fixed inset-x-0 bottom-0 top-[68px] z-40 bg-slate-950/30 transition-opacity duration-300 sm:top-[74px] xl:hidden ${isMenuOpen ? "visible opacity-100" : "invisible opacity-0"}`} onClick={() => setIsMenuOpen(false)} aria-hidden="true" />
+      <div className={`fixed inset-x-0 bottom-0 top-[84px] z-40 bg-slate-950/30 transition-opacity duration-300 sm:top-[90px] xl:hidden ${isMenuOpen ? "visible opacity-100" : "invisible opacity-0"}`} onClick={() => setIsMenuOpen(false)} aria-hidden="true" />
 
       <nav
         id="responsive-navigation"
         aria-label="Responsive navigation"
-        className={`absolute inset-x-0 top-full z-50 max-h-[calc(100vh-68px)] overflow-y-auto border-t border-slate-100 bg-white px-4 pb-8 pt-3 shadow-[0_24px_55px_rgba(15,23,42,0.16)] transition duration-300 sm:max-h-[calc(100vh-74px)] sm:px-6 md:px-8 xl:hidden ${isMenuOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-3 opacity-0"}`}
+        className={`absolute inset-x-3 top-[calc(100%+0.75rem)] z-50 max-h-[calc(100vh-96px)] overflow-y-auto rounded-[2rem] border border-slate-100 bg-white px-4 pb-8 pt-3 shadow-[0_24px_55px_rgba(15,23,42,0.16)] transition duration-300 sm:inset-x-6 sm:max-h-[calc(100vh-104px)] sm:px-6 md:px-8 xl:hidden ${isMenuOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-3 opacity-0"}`}
       >
         <div className="mx-auto max-w-3xl">
           <Link to="/" className="flex min-h-12 items-center rounded-xl px-3 text-[16px] font-bold text-slate-900 hover:bg-slate-50">Home</Link>
